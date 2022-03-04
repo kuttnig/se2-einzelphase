@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Se2Einzelphase</string>
-    <string name="input_instruction">Please enter your matriculation number:</string>
-    <string name="send">Send</string>
-    <string name="server_response">Server response</string>
+
+    <string name="activity_main_input_instruction">Please enter your matriculation number:</string>
+    <string name="activity_main_send">Send</string>
+    <string name="activity_main_server_response">Server response</string>
+
+    <string name="activity_calculation_input_instruction">Please enter a number n:</string>
+    <string name="activity_calculation_compute">Compute</string>
+    <string name="activity_calculation_result">Result</string>
 </resources>

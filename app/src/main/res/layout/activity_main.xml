@@ -7,17 +7,17 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/inputInstruction"
+        android:id="@+id/activity_main_input_instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="@string/input_instruction"
+        android:text="@string/activity_main_input_instruction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/userInput"
+        android:id="@+id/activity_main_user_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -25,24 +25,24 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputInstruction" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_input_instruction" />
 
     <TextView
-        android:id="@+id/serverResponse"
+        android:id="@+id/activity_main_server_response"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/server_response"
-        app:layout_constraintBottom_toTopOf="@+id/sendButton"
+        android:text="@string/activity_main_server_response"
+        app:layout_constraintBottom_toTopOf="@+id/activity_main_send_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userInput" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_user_input" />
 
     <Button
-        android:id="@+id/sendButton"
+        android:id="@+id/activity_main_send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
-        android:text="@string/send"
+        android:text="@string/activity_main_send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
