@@ -4,8 +4,10 @@
     <string name="activity_main_input_instruction">Please enter your matriculation number:</string>
     <string name="activity_main_send">Send</string>
     <string name="activity_main_server_response">Server response</string>
+    <string name="activity_main_toolbar_title">Network test</string>
 
     <string name="activity_calculation_input_instruction">Please enter a number n:</string>
     <string name="activity_calculation_compute">Compute</string>
     <string name="activity_calculation_result">Result</string>
+    <string name="activity_calculation_toolbar_title">Calculation</string>
 </resources>
