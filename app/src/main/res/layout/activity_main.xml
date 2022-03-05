@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Toolbar components start -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/activity_main_toolbar"
         android:layout_width="match_parent"
@@ -13,19 +14,29 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/activity_main_toolbar_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_main_toolbar_title"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/activity_main_toolbar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_main_toolbar_title"
+        app:layout_constraintBottom_toBottomOf="@id/activity_main_toolbar"
+        app:layout_constraintEnd_toEndOf="@id/activity_main_toolbar"
+        app:layout_constraintStart_toStartOf="@id/activity_main_toolbar"
+        app:layout_constraintTop_toTopOf="@id/activity_main_toolbar" />
+
+    <ImageButton
+        android:id="@+id/activity_main_toolbar_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:contentDescription="@string/description_popup_menu"
+        android:src="@drawable/ic_baseline_menu_36_black"
+        app:layout_constraintBottom_toBottomOf="@id/activity_main_toolbar"
+        app:layout_constraintEnd_toEndOf="@id/activity_main_toolbar"
+        app:layout_constraintTop_toTopOf="@id/activity_main_toolbar" />
+    <!-- Toolbar components end -->
 
     <TextView
         android:id="@+id/activity_main_input_instruction"
@@ -37,13 +48,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_toolbar" />
 
+
     <EditText
         android:id="@+id/activity_main_user_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:ems="10"
+        android:hint="@string/activity_main_edittext_hint"
+        android:importantForAutofill="no"
         android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_main_input_instruction" />
