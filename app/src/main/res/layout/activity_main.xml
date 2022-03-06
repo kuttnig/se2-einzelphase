@@ -32,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="?attr/actionBarSize"
         android:contentDescription="@string/description_popup_menu"
+        android:onClick="showPopup"
         android:src="@drawable/ic_baseline_menu_36_black"
         app:layout_constraintBottom_toBottomOf="@id/activity_main_toolbar"
         app:layout_constraintEnd_toEndOf="@id/activity_main_toolbar"
