@@ -47,7 +47,7 @@
         android:text="@string/activity_main_input_instruction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/activity_main_toolbar" />
 
 
     <EditText
@@ -63,23 +63,24 @@
         android:textColorHint="#546E7A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_input_instruction" />
+        app:layout_constraintTop_toBottomOf="@id/activity_main_input_instruction" />
 
     <TextView
         android:id="@+id/activity_main_server_response"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/activity_main_server_response"
-        app:layout_constraintBottom_toTopOf="@+id/activity_main_send_button"
+        app:layout_constraintBottom_toTopOf="@id/activity_main_send_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_user_input" />
+        app:layout_constraintTop_toBottomOf="@id/activity_main_user_input" />
 
     <Button
         android:id="@+id/activity_main_send_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
+        android:onClick="sendMessage"
         android:text="@string/activity_main_send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
