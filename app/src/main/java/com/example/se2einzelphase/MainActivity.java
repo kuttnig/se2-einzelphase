@@ -1,12 +1,9 @@
 package com.example.se2einzelphase;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.PopupMenu;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,11 +15,11 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     private EditText editTextUserInput;
-    private TextView textViewServerResponse;
+    private TextView textViewResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,24 +27,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         setContentView(R.layout.activity_main);
 
         editTextUserInput = findViewById(R.id.activity_main_user_input);
-        textViewServerResponse = findViewById(R.id.activity_main_server_response);
-    }
-
-    public void showPopup(View v) {
-        PopupMenu popupMenu = new PopupMenu(this, v);
-        popupMenu.inflate(R.menu.menu_items);
-        popupMenu.setOnMenuItemClickListener(this);
-        popupMenu.show();
-    }
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        if (item.getItemId() == R.id.menu_item_calculation) {
-            Intent startCalculationIntent = new Intent(this, CalculationActivity.class);
-            startActivity(startCalculationIntent);
-            return true;
-        }
-        return false;
+        textViewResult = findViewById(R.id.activity_main_result);
     }
 
     public void sendMessage(View v) {
@@ -62,12 +42,50 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 String answerFromServer = inFromServer.readLine();
                 clientSocket.close();
 
-                textViewServerResponse.post(() -> textViewServerResponse.setText(answerFromServer));
+                textViewResult.post(() -> textViewResult.setText(answerFromServer));
             } catch (UnknownHostException e) {
                 Log.e(TAG, "Hello, I'm a log-message.");
             } catch (IOException e) {
                 Log.e(TAG, "It worked on my computer.");
             }
+        }).start();
+    }
+
+    public void computeResult(View v) {
+        new Thread(() -> {
+            String userInput = editTextUserInput.getText().toString();
+            String s = "There is no pair with a GCD greater than 1.";
+
+            for (int i = 0; i < userInput.length(); i++) {
+                for (int j = (i + 1); j < userInput.length(); j++) {
+                    int n = Character.getNumericValue(userInput.charAt(i));
+                    int k = Character.getNumericValue(userInput.charAt(j));
+
+                    if (k > n) {
+                        int tmp = n;
+                        n = k;
+                        k = tmp;
+                    }
+                    while (k != 0) {
+                        int rem = n % k;
+                        n = k;
+                        k = rem;
+                    }
+
+                    if (n != 1) {
+                        s = "Pair found!\nDigit " + Character.getNumericValue(userInput.charAt(i)) + " at index " + i
+                                + "\nDigit " + Character.getNumericValue(userInput.charAt(j)) + " at index " + j
+                                + "\nGCD: " + n;
+
+                        i = userInput.length();
+                        j = userInput.length();
+                    }
+                }
+            }
+
+            // necessary because otherwise the ide complains: Variable used in lambda expression should be final or effectively final
+            String result = s;
+            textViewResult.post(() -> textViewResult.setText(result));
         }).start();
     }
 }

@@ -1,18 +1,10 @@
 <resources>
     <string name="app_name">Se2Einzelphase</string>
 
-    <string name="activity_main_input_instruction">Please enter your matriculation number:</string>
+    <string name="activity_main_input_instruction">Please enter your matriculation number or a natural number</string>
     <string name="activity_main_send">Send</string>
-    <string name="activity_main_server_response">Server response</string>
-    <string name="activity_main_toolbar_title">Network test</string>
-    <string name="activity_main_edittext_hint">Matriculation number</string>
-
-    <string name="activity_calculation_input_instruction">Please enter a number n:</string>
-    <string name="activity_calculation_compute">Compute</string>
-    <string name="activity_calculation_result">Result</string>
-    <string name="activity_calculation_toolbar_title">Calculation</string>
-    <string name="activity_calculation_edittext_hint">Natural number n</string>
-
-    <string name="description_popup_menu">Open popup menu</string>
-
+    <string name="activity_main_compute">Compute</string>
+    <string name="activity_main_result">Result</string>
+    <string name="activity_main_toolbar_title">Software Engineering 2 - Individual Example</string>
+    <string name="activity_main_edittext_hint">Your input:</string>
 </resources>
